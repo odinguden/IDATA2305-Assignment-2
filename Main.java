@@ -1,3 +1,4 @@
+import booking.MoveTicketServerAtomic;
 import booking.MovieTicketClient;
 import booking.MovieTicketServer;
 import booking.MovieTicketServerSync;
@@ -27,6 +28,15 @@ public class Main {
 				case "v":
 					System.out.println("Starting in volatile mode");
 					movieTicketServer = new MovieTicketServerVolatile(
+						10,
+						"Troll"
+					);
+					break;
+				case "atomic":
+				case "atom":
+				case "a":
+					System.out.println("Starting in atomic mode");
+					movieTicketServer = new MoveTicketServerAtomic(
 						10,
 						"Troll"
 					);
