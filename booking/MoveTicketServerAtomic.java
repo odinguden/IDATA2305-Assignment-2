@@ -14,14 +14,14 @@ public class MoveTicketServerAtomic extends MovieTicketServer {
 
 	@Override
 	public void bookTicket(String userName, int numberOfSeats) {
-		System.out.println("Hi, " + userName + " : " + availableSeats.get() + " : Seats available for " + movieName);
+		System.out.println(userName + ": " + availableSeats.get() + " seats available for " + movieName);
 
 		if ((availableSeats.get() - numberOfSeats) < 0) {
-			System.out.println("Hi, " + userName + " : Seats not available for " + movieName);
+			System.out.println(userName + ": Seats not available for " + movieName);
 			return;
 		}
 		availableSeats.set(availableSeats.get() - numberOfSeats);
-		System.out.println("Hi, " + userName + " : " + numberOfSeats + " Seats booked successfully for" + movieName);
-		System.out.println(availableSeats.get() + " remaining for " + movieName);
+		System.out.println(userName + ": " + numberOfSeats + " seats booked successfully for" + movieName);
+		System.out.println(userName + ": " + availableSeats.get() + " remaining for " + movieName);
 	}
 }
