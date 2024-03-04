@@ -4,16 +4,16 @@ import booking.MovieTicketServer;
 public class Main {
     public static void main(String[] args) {
         MovieTicketServer movieTicketServer = new MovieTicketServer(
-					"Troll", 
-					10
+					10,
+					"Troll"
 				);
 
         // Creating 4 threads
-        Thread t1 = new MovieTicketClient(movieTicketServer, "Xiangming", 3);
-        Thread t2 = new MovieTicketClient(movieTicketServer, "Ilaria", 2);
-        Thread t3 = new MovieTicketClient(movieTicketServer, "Sam", 3);
-        Thread t4 = new MovieTicketClient(movieTicketServer, "Andreas", 4);
-        
+        Thread t1 = new MovieTicketClient("Xiangming", movieTicketServer, 3);
+        Thread t2 = new MovieTicketClient("Ilaria", movieTicketServer, 2);
+        Thread t3 = new MovieTicketClient("Sam", movieTicketServer, 3);
+        Thread t4 = new MovieTicketClient("Andreas", movieTicketServer, 4);
+
         // Starting all threads
         t1.start();
         t2.start();
